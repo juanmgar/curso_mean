@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Web con JS ordenación brubuja</title>
+	</head>
+	<body>
+		<h1>Encabezado de nivel 1</h1>
+	</body>
+	
+	<script>
+	var myArr = [1,5,8,3,7,6];
+	
+	function ordenar(myArr){
+		
+		for (var j = 0; j< myArr.legth; j++){
+			for (var i = 0; i < myArr.length; i++){
+				if (myArr[i]>myArr[i+1]){
+					var aux = myArr[i];
+					myArr[i] = myArr[i+1];
+					myArr[i+1] = aux;
+				}
+			}
+		}
+		
+		return myArr;
+	}
+	
+	console.log(myArr);
+	console.log(ordenar(myArr));
+	
+	
+	</script>
+</html>
+
