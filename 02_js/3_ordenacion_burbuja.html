@@ -5,28 +5,31 @@
 		<title>Web con JS ordenación brubuja</title>
 	</head>
 	<body>
-		<h1>Encabezado de nivel 1</h1>
 	</body>
 	
 	<script>
-	var myArr = [1,5,8,3,7,6];
+	var myArr= new Array()
 	
-	function ordenar(myArr){
+	myArr[0]=16; myArr[1]=1; myArr[2]=4; myArr[3]=9; 
+	myArr[4]=12; myArr[5]=33; myArr[6]=48; myArr[7]=3; 
+	console.log(myArr);
+	
+	function ordenar(array){
 		
-		for (var j = 0; j< myArr.legth; j++){
-			for (var i = 0; i < myArr.length; i++){
-				if (myArr[i]>myArr[i+1]){
-					var aux = myArr[i];
-					myArr[i] = myArr[i+1];
-					myArr[i+1] = aux;
+		for (var j = 0; j< array.length; j++){
+			for (var i = 0; i < array.length; i++){
+				if (array[i]>array[i+1]){
+					var aux = array[i];
+					array[i] = array[i+1];
+					array[i+1] = aux;
 				}
 			}
 		}
 		
-		return myArr;
+		return array;
 	}
 	
-	console.log(myArr);
+	
 	console.log(ordenar(myArr));
 	
 	
