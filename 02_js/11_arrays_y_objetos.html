@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Jugando con el DOM</title>
+	</head>
+	<body>
+		<div id="texto1">texto1</div>
+		<div id="texto2">texto2</div>
+	</body>
+	
+	<script>
+	var div = document.getElementById("texto2");
+	var arrayUno = new Array();
+	
+	div.innerHTML = div.innerHTML + arrayUno +"<br>";
+	arrayUno[0]="ELEMENTO 0";
+	arrayUno[1]="ELEMENTO 1";
+	div.innerHTML = div.innerHTML + arrayUno +"<br>";
+	
+	arrayUno["propiedad"]="ELEMENTO PROP";
+	
+	arrayUno.toString2 = function (){
+			return arrayUno.toString() + ", prop " + arrayUno.propiedad;
+	}
+	
+	div.innerHTML += arrayUno.toString2() +"<br>"; /*Es lo mismo que aparece arriba*/
+	
+	</script>
+</html>
