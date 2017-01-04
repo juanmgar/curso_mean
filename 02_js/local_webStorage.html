@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>EJEMPLOS LOCALSTORAGE</title>
+</head>
+<body>
+	<header>
+		<h1>Ejemplo - localStorage</h1>
+	</header>
+	
+    <section>
+        <hr />
+        <input type="text" placeholder="Nombre" id="nombreform" />
+        <input type="text" placeholder="Apellido" id="apellidoform" />
+        <input type="button" onclick="saveData()" value="Guardar" />
+        <hr /> Nombre almacenado:
+        <label type="text" id="nombre"></label> Apellido almacenado:
+        <label type="text" id="apellido"></label>
+        <input type="button" onclick="loadData()" value="Cargar elementos" />
+    </section>
+	
+</body>
+<script>
+    function saveData() {
+    var nombreNS = document.getElementById("nombreform").value;
+    var apellidoNS = document.getElementById("apellidoform").value;
+    localStorage.nData = nombreNS;
+    localStorage.aData = apellidoNS;
+	}
+
+ function loadData() {
+    var nombreS = localStorage.nData;
+    var apellidoS = localStorage.aData;
+	document.getElementById("nombre").innerHTML += (nombreS);
+	document.getElementById("apellido").innerHTML += (apellidoS);
+	}
+    
+	
+</script>
+</html>
+
