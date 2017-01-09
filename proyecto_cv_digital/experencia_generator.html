@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Formulario generador de CVs">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript">
+    <title>CVator V1 JSON</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <header>
+        <h1 class="h1">FORMULARIO CURRICULUM</h1>
+    </header>
+	
+	<div class="formulario" id="introduccion_datos">
+	 <hr />
+			<p><label for="nombre">Nombre: </label> <input class="caja" type="text" id="nombre"/></p>
+			<p><label for="cargo">Cargo: </label><input class="caja" type="text" id="cargo"></p>
+			<p><label for="fecha_inicio">Fecha inicio: </label><input class="caja" type="date" id="fecha_inicio"></p>
+			<p><label for="fecha_fin">Fecha fin: </label><input class="caja" type="date" id="fecha_fin"></p>
+			<p><label for="localizacion">Localización: </label><input class="caja" type="text" id="localizacion">
+			<input type="button" onclick="crearJSON()" value="Añadir experiencia" /></p>
+			<p>JSON: <textarea class="estilotextarea" id="cajaJSON"></textarea>
+			<input type="button" onclick="loadData()" value="Cargar y mostrar" /></p>	
+	 <hr />
+	 <p>Experiencia:</p>
+	</div> 
+	
+	<div id="introduccion_datos">		
+		
+	</div> 
+  
+</body>
+
+<script>
+function crearJSON(){
+	var nombre = document.getElementById("nombre").value;
+	var cargo = document.getElementById("cargo").value;
+	var fecha_inicio = document.getElementById("fecha_inicio").value;
+	var fecha_fin = document.getElementById("fecha_fin").value;
+	var localizacion = document.getElementById("localizacion").value;
+	
+	var resultadoJSON = "{"+"nombre"+":"+'"'+nombre+'"'+";"+"cargo"+":"+'"'+cargo+'"'+";"
+	+"fecha_inicio"+":"+'"'+fecha_inicio+'"'+";"+"fecha_fin"+":"+'"'+fecha_fin+'"'+";"
+	+"localizacion"+":"+'"'+localizacion+'"'+";"+"}";
+	document.getElementById("cajaJSON").innerText = (resultadoJSON);
+
+}
+</script>
+
+<style>
+div {
+  margin: .4em 0;
+}
+
+div label {
+  width: 10%;
+  float: left;
+}
+
+.caja {
+	font-family: sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	background-color: #C7F3F5;
+	border: 2px solid #990000;
+}
+
+.estilotextarea {
+	width:400px;
+	height:100px;
+	border: 2px solid #990000;
+	background: #C7F3F5;
+}
+
+.formulario {
+	font-family: sans-serif;
+	font-size: 18px;
+}
+
+.h1{
+	font-family: sans-serif;
+	font-size: 24px;
+}
+
+</style>
+
+</html>
